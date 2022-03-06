@@ -42,6 +42,9 @@
             this.labelConfirmar = new System.Windows.Forms.Label();
             this.listViewBusca = new System.Windows.Forms.ListView();
             this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonDeletar = new System.Windows.Forms.Button();
+            this.textDeleteId = new System.Windows.Forms.TextBox();
+            this.labelTextID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelNome
@@ -165,11 +168,40 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonDeletar
+            // 
+            this.buttonDeletar.Location = new System.Drawing.Point(12, 343);
+            this.buttonDeletar.Name = "buttonDeletar";
+            this.buttonDeletar.Size = new System.Drawing.Size(94, 29);
+            this.buttonDeletar.TabIndex = 14;
+            this.buttonDeletar.Text = "Deletar";
+            this.buttonDeletar.UseVisualStyleBackColor = true;
+            this.buttonDeletar.Click += new System.EventHandler(this.buttonDeletar_Click);
+            // 
+            // textDeleteId
+            // 
+            this.textDeleteId.Location = new System.Drawing.Point(161, 345);
+            this.textDeleteId.Name = "textDeleteId";
+            this.textDeleteId.Size = new System.Drawing.Size(47, 27);
+            this.textDeleteId.TabIndex = 15;
+            // 
+            // labelTextID
+            // 
+            this.labelTextID.AutoSize = true;
+            this.labelTextID.Location = new System.Drawing.Point(128, 352);
+            this.labelTextID.Name = "labelTextID";
+            this.labelTextID.Size = new System.Drawing.Size(27, 20);
+            this.labelTextID.TabIndex = 16;
+            this.labelTextID.Text = "ID:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 448);
+            this.Controls.Add(this.labelTextID);
+            this.Controls.Add(this.textDeleteId);
+            this.Controls.Add(this.buttonDeletar);
             this.Controls.Add(this.buttonBuscar);
             this.Controls.Add(this.listViewBusca);
             this.Controls.Add(this.labelConfirmar);
@@ -208,5 +240,8 @@
         private Label labelConfirmar;
         private ListView listViewBusca;
         private Button buttonBuscar;
+        private Button buttonDeletar;
+        private TextBox textDeleteId;
+        private Label labelTextID;
     }
 }

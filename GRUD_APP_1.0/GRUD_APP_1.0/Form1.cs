@@ -120,8 +120,8 @@ namespace GRUD_APP_1._0
                         listViewBusca.Items.Add(linha_listview);
 
                     }
-                    
 
+                    cnn.Close();
                     
                 }
             }
@@ -133,6 +133,35 @@ namespace GRUD_APP_1._0
 
         private void listViewBusca_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonDeletar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Iniciando a conexão com o MySql
+                using (MySqlConnection cnn = new MySqlConnection())
+                {
+                    cnn.ConnectionString = "datasource=localhost;username=root;password= ;database= db_cadastro";
+                    cnn.Open();
+                    // Variavel para deletar .
+                    string sql = "DELETE FROM `db_cadastro`.`contato` WHERE (`id` = '"+ textDeleteId +"');";
+                    MySqlCommand comando = new MySqlCommand(sql, cnn);
+                    // Labal de verificação com a conexão
+                    labelConfirmar.Text = "Conexão com MySQL com sucesso!";
+                    comando.ExecuteReader();
+
+                    // mensagem de comando deletado
+                    MessageBox.Show("Deletado com sucesso !");
+
+                    cnn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
     }
